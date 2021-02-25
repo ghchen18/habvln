@@ -15,6 +15,8 @@ import habitat
 import pdb;pdb.set_trace()
 from examples import SimpleRLEnv, draw_top_down_map
 
+# import examples.shortest_path_follower_example.SimpleRLEnv as SimpleRLEnv import SimpleRLEnv, draw_top_down_map
+
 from habitat.tasks.nav.shortest_path_follower import ShortestPathFollower
 from habitat.utils.visualizations.utils import (
     append_text_to_image,
