@@ -402,8 +402,8 @@ class RLEnv(gym.Env):
         :return: :py:`(observations, reward, done, info)`
         """
 
-        if self._env._episode_over:
-            self._env.reset()
+        # if self._env._episode_over:
+        #     self._env.reset()
 
         observations = self._env.step(*args, **kwargs)
         done = self.get_done(observations)
