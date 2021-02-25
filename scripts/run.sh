@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python examples/vln_reference_path_follower_example.py 
+python vlnexamples/vln_reference_path_follower_example.py 
