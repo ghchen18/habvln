@@ -76,7 +76,7 @@ class ShortestPathFollower:
         assert self._follower is not None
         try:
             next_action = self._follower.next_action_along(goal_pos)
-            import pdb;pdb.set_trace()
+            # import pdb;pdb.set_trace()
         except habitat_sim.errors.GreedyFollowerError as e:
             if self._stop_on_error:
                 next_action = HabitatSimActions.STOP

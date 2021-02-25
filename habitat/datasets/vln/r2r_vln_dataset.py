@@ -47,7 +47,7 @@ class VLNDatasetV1(Dataset):
         self.episodes = list(
             filter(self.build_content_scenes_filter(config), self.episodes)
         )
-        import pdb;pdb.set_trace()
+        # import pdb;pdb.set_trace()
 
     def from_json(
         self, json_str: str, scenes_dir: Optional[str] = None
