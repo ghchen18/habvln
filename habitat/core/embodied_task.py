@@ -231,7 +231,7 @@ class EmbodiedTask:
         self._config = config
         self._sim = sim
         self._dataset = dataset
-        import pdb;pdb.set_trace()
+        # import pdb;pdb.set_trace()
         self.measurements = Measurements(
             self._init_entities(
                 entity_names=config.MEASUREMENTS,
@@ -264,7 +264,8 @@ class EmbodiedTask:
         entities = OrderedDict()
         for entity_name in entity_names:
             entity_cfg = getattr(entities_config, entity_name)
-            entity_type = register_func(entity_cfg.TYPE)
+            if hasattr(entity_cfg, 'TYPE'):
+                entity_type = register_func(entity_cfg.TYPE)
             assert (
                 entity_type is not None
             ), f"invalid {entity_name} type {entity_cfg.TYPE}"
