@@ -401,10 +401,9 @@ class RLEnv(gym.Env):
 
         :return: :py:`(observations, reward, done, info)`
         """
-
         observations = self._env.step(*args, **kwargs)
-        reward = self.get_reward(observations)
         done = self.get_done(observations)
+        reward = self.get_reward(observations)
         info = self.get_info(observations)
 
         return observations, reward, done, info

@@ -299,7 +299,7 @@ class EmbodiedTask:
         assert (
             action_name in self.actions
         ), f"Can't find '{action_name}' action in {self.actions.keys()}."
-        import pdb;pdb.set_trace()
+        # import pdb;pdb.set_trace()
         task_action = self.actions[action_name]
         observations = task_action.step(**action["action_args"], task=self)
         observations.update(

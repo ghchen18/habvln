@@ -70,9 +70,9 @@ def shortest_path_example():
                 best_action = follower.get_next_action(
                     env.habitat_env.current_episode.goals[0].position
                 )
-                if best_action is None:
+                if best_action is None or env._episode_over:
                     break
-
+                
                 observations, reward, done, info = env.step(best_action)
                 im = observations["rgb"]
                 top_down_map = draw_top_down_map(info, im.shape[0])
