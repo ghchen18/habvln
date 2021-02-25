@@ -53,7 +53,7 @@ def reference_path_example(mode):
         follower.mode = mode
         print("Environment creation successful")
 
-        for episode in range(6):
+        for episode in range(3):
             env.reset()
             episode_id = env.habitat_env.current_episode.episode_id
             print(
@@ -79,6 +79,7 @@ def reference_path_example(mode):
                     if best_action == None:
                         break
                     observations, reward, done, info = env.step(best_action)
+                    import pdb;pdb.set_trace()
                     save_map(observations, info, images)
                     steps += 1
 
