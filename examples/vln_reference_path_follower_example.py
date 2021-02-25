@@ -57,7 +57,7 @@ def reference_path_example(mode):
         follower.mode = mode
         print("Environment creation successful")
 
-        for episode in range(3):
+        for episode in range(6):
             env.reset()
             episode_id = env.habitat_env.current_episode.episode_id
             print(
