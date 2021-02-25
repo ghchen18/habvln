@@ -231,7 +231,7 @@ class EmbodiedTask:
         self._config = config
         self._sim = sim
         self._dataset = dataset
-
+        import pdb;pdb.set_trace()
         self.measurements = Measurements(
             self._init_entities(
                 entity_names=config.MEASUREMENTS,

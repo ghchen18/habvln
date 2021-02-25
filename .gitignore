@@ -24,6 +24,8 @@ var/
 *.egg
 data/
 data/*
+.history/
+.history/*
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
