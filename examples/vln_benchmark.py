@@ -66,7 +66,7 @@ def main():
     args = parser.parse_args()
     config = get_config(args.task_config)
 
-    metrics = reference_path_benchmark(config, num_episodes=10)
+    metrics = reference_path_benchmark(config, num_episodes=30)
 
     print("Benchmark for Reference Path Follower agent:")
     for k, v in metrics.items():
