@@ -16,7 +16,7 @@ from habitat.utils.visualizations.utils import (
     images_to_video,
 )
 
-IMAGE_DIR = os.path.join("examples", "images")
+IMAGE_DIR = os.path.join("vlnexamples", "images")
 if not os.path.exists(IMAGE_DIR):
     os.makedirs(IMAGE_DIR)
 
@@ -74,14 +74,15 @@ def reference_path_example(mode):
             ]
             for point in reference_path:
                 done = False
+                env.reset()  ##TBD
                 while not done:
                     best_action = follower.get_next_action(point)
                     if best_action == None:
                         break
                     observations, reward, done, info = env.step(best_action)
-                    import pdb;pdb.set_trace()
                     save_map(observations, info, images)
                     steps += 1
+
 
             print(f"Navigated to goal in {steps} steps.")
             images_to_video(images, dirname, str(episode_id))

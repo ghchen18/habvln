@@ -131,7 +131,10 @@ def images_to_video(
     )
     logger.info(f"Video created: {os.path.join(output_dir, video_name)}")
     for im in tqdm.tqdm(images):
-        writer.append_data(im)
+        try:
+            writer.append_data(im)
+        except ValueError:
+            pass
     writer.close()
 
 
